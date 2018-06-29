@@ -24,6 +24,7 @@ main {
 header {
   margin-bottom: 20px;
   padding: 20px 5px 0 50px;
+  text-align: right;
 }
 
 header:before {
@@ -36,8 +37,10 @@ header:before {
   border-left-color: #004471;
 }
 
-header h1, header h2 {
-  text-align: right;
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
 }
 
 .avatar {
@@ -53,8 +56,14 @@ header h1, header h2 {
 }
 
 section {
-  margin-bottom: 40px;
+  width: 100%;
+  max-width: 495px;
+  margin: 0 auto 40px;
   padding: 0 10px;
+}
+
+section p:not(:last-of-type) {
+  margin-bottom: 10px;
 }
 
 h3 {
@@ -89,7 +98,7 @@ ul {
   list-style-type: none;
 }
 
-.contacts li {
+.contacts li:not(:last-of-type) {
   margin-bottom: 20px;
 }
 
@@ -116,5 +125,91 @@ footer {
   background-color: #004471;
   color: #ffffff;
   text-align: center;
+}
+
+@media screen and (min-width: 640px) {
+  header {
+    padding-right: 20px;
+  }
+  section {
+    position: relative;
+    margin: 0 20px 40px auto;
+    padding: 20px;
+    border: 10px solid #004471;
+  }
+  section:before, section:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+  section:before {
+    right: calc(100% - 15px);
+    -webkit-transform: translate(0, -50%) rotate(-45deg);
+            transform: translate(0, -50%) rotate(-45deg);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: #004471;
+    border-left-color: #004471;
+  }
+  section:after {
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    right: calc(100% + 30px);
+    width: 50px;
+    height: 10px;
+    background-color: #004471;
+  }
+  section h3 {
+    position: absolute;
+    top: 50%;
+    right: 115%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  header {
+    padding-left: 65px;
+    text-align: left;
+  }
+  .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  section {
+    max-width: 30%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  section:nth-of-type(even) {
+    margin-left: 210px;
+  }
+  section:after {
+    width: 30px;
+  }
+  .avatar {
+    margin-left: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
