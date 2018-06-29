@@ -18,8 +18,7 @@ main {
   font-family: sans-serif;
   color: $color-main;
   background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0
-    0 304 304' width='204' height='204'%3E%3Cpath fill='%23004471' fill-opacity='0.1' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='204' height='204'%3E%3Cpath fill='%23004471' fill-opacity='0.1' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160
     48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0
     2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5
     5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5
@@ -63,20 +62,19 @@ main {
     1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0
     0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
 }
-main:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 40px solid transparent;
-  border-top-color: $color-main;
-  border-left-color: $color-main;
-}
 header {
   margin-bottom: 20px;
   padding: 20px 5px 0 50px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    border: 40px solid transparent;
+    border-top-color: $color-main;
+    border-left-color: $color-main;
+  }
   h1, h2 {
-    // color: $color-main;
     text-align: right;
   }
 }
@@ -90,7 +88,6 @@ header {
   background-position: 50% 50%;
   background-size: 280px auto;
   border: 10px solid $color-main;
-  background-attachment: fixed;
 }
 section {
   margin-bottom: 40px;
