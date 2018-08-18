@@ -91,15 +91,24 @@ header {
   background-position: 50% 50%;
   background-size: 280px auto;
   border: 10px solid $color-main;
+  overflow: hidden;
+  img {
+    opacity: 0;
+  }
 }
 section {
   width: 100%;
   max-width: 495px;
   margin: 0 auto 40px;
   padding: 0 10px;
+  clear: both;
   p:not(:last-of-type) {
     margin-bottom: 10px;
   }
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 h3 {
   margin-bottom: 20px;
@@ -149,11 +158,23 @@ ul {
     height: 40px;
   }
 }
+.skills {
+  li {
+    margin-bottom: 18px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
 footer {
   padding: 10px 10px 0;
   background-color: $color-main;
   color: $color-white;
   text-align: center;
+}
+.floating-block {
+  transition: transform 2s;
+  will-change: transform;
 }
 @media screen and(min-width: 640px) {
   header {
@@ -203,7 +224,8 @@ footer {
 }
 @media screen and(min-width: 1280px) {
   header {
-    padding-left: 65px;
+    padding-top: 40px;
+    padding-left: 480px;
     text-align: left;
   }
   .content {
@@ -211,6 +233,7 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
     flex-wrap: wrap;
+    clear: both;
   }
   section {
     max-width: 30%;
@@ -224,6 +247,61 @@ footer {
     }
   }
   .avatar {
-    margin-left: 0;
+    margin: -80px 0 40px 0;
+  }
+}
+@media print {
+  * { -webkit-print-color-adjust: exact; }
+  header {
+    float: right;
+    margin: 80px 40px 0 20px;
+  }
+  a:after {
+    content:" <" attr(href) ">";
+  }
+  .phone, .mail {
+    a:after {
+      display: none;
+    }
+  } 
+  .avatar {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin: 20px 10px 40px 20px;
+    img {
+      opacity: 1;
+    }
+  }
+  .content {
+    clear: both;
+  }
+  section {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 0 0 40px 20px;
+  }
+  .contacts {
+    a, .location {
+      min-height: 24px;
+      padding-left: 32px;
+      line-height: 24px;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .skills {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 0 20px;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      width: 45%;
+      margin-right: 20px;
+    }
   }
 }

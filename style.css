@@ -53,6 +53,11 @@ header:before {
   background-position: 50% 50%;
   background-size: 280px auto;
   border: 10px solid #004471;
+  overflow: hidden;
+}
+
+.avatar img {
+  opacity: 0;
 }
 
 section {
@@ -60,10 +65,16 @@ section {
   max-width: 495px;
   margin: 0 auto 40px;
   padding: 0 10px;
+  clear: both;
 }
 
 section p:not(:last-of-type) {
   margin-bottom: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h3 {
@@ -120,11 +131,27 @@ ul {
   height: 40px;
 }
 
+.skills li {
+  margin-bottom: 18px;
+}
+
+.skills li:last-of-type {
+  margin-bottom: 0;
+}
+
 footer {
   padding: 10px 10px 0;
   background-color: #004471;
   color: #ffffff;
   text-align: center;
+}
+
+.floating-block {
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
+  will-change: transform;
 }
 
 @media screen and (min-width: 640px) {
@@ -180,7 +207,8 @@ footer {
 
 @media screen and (min-width: 1280px) {
   header {
-    padding-left: 65px;
+    padding-top: 40px;
+    padding-left: 480px;
     text-align: left;
   }
   .content {
@@ -196,6 +224,7 @@ footer {
             justify-content: flex-end;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    clear: both;
   }
   section {
     max-width: 30%;
@@ -209,7 +238,61 @@ footer {
     width: 30px;
   }
   .avatar {
-    margin-left: 0;
+    margin: -80px 0 40px 0;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+  header {
+    float: right;
+    margin: 80px 40px 0 20px;
+  }
+  a:after {
+    content: " <" attr(href) ">";
+  }
+  .phone a:after, .mail a:after {
+    display: none;
+  }
+  .avatar {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin: 20px 10px 40px 20px;
+  }
+  .avatar img {
+    opacity: 1;
+  }
+  .content {
+    clear: both;
+  }
+  section {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 0 0 40px 20px;
+  }
+  .contacts a, .contacts .location {
+    min-height: 24px;
+    padding-left: 32px;
+    line-height: 24px;
+  }
+  .contacts svg {
+    width: 24px;
+    height: 24px;
+  }
+  .skills {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 0 20px;
+  }
+  .skills li {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin-right: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */
