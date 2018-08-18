@@ -294,5 +294,8 @@ footer {
     width: 45%;
     margin-right: 20px;
   }
+  .skills li:last-of-type {
+    margin-bottom: 18px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
