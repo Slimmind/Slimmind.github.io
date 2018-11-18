@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html,
 body {
   width: 100%;
@@ -62,21 +67,17 @@ header:before {
 
 @media screen and (min-width: 768px) {
   .container {
-    font-size: 0;
-    line-height: 0;
-    letter-spacing: -5px;
-  }
-  .container > * {
-    display: inline-block;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: normal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    padding-bottom: 40px;
+    padding-bottom: 25px;
     text-align: center;
   }
 }
@@ -110,7 +111,7 @@ section {
   section {
     display: inline-block;
     vertical-align: top;
-    max-width: calc(50% - 5px);
+    max-width: 50%;
     margin-right: 0;
     margin-left: 0;
     padding-right: 50px;
@@ -121,10 +122,12 @@ section {
 @media screen and (min-width: 1200px) {
   section {
     position: relative;
-    max-width: calc(44% - 5px);
+    max-width: 44%;
     margin-bottom: 100px;
     padding-right: 100px;
     padding-left: 100px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
   section:nth-of-type(even) {
     margin-left: 6%;
@@ -256,6 +259,10 @@ footer {
   background-color: #004471;
   color: #ffffff;
   text-align: center;
+}
+
+footer small {
+  font-size: 12px;
 }
 
 .floating-block {
