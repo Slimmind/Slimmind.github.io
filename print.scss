@@ -1,0 +1,36 @@
+// PRINT STYLES
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+    }
+
+    main {
+        height: 100%;
+        max-height: 100%;
+        padding-bottom: 0;
+    }
+
+    .flex-wrapper {
+        margin-top: -20px;
+    }
+
+    section:last-of-type {
+        margin-bottom: 20px;
+    }
+
+    .avatar-wrap,
+    footer {
+        display: none;
+    }
+
+    .contacts,
+    .skills {
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    a:after {
+        content: " <"attr(href) ">";
+    }
+}
