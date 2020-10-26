@@ -18,9 +18,14 @@
         margin-bottom: 20px;
     }
 
-    .avatar-wrap,
     footer {
         display: none;
+    }
+
+    .avatar-wrap {
+        position: absolute;
+        top: 110px;
+        right: 40px;
     }
 
     .contacts,
@@ -31,6 +36,6 @@
     }
 
     a:after {
-        content: " <"attr(href) ">";
+        // content: " <"attr(href) ">";
     }
 }
